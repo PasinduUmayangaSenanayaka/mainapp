@@ -10,10 +10,6 @@ const PawnGeneratePage = () => {
   const [totalNetWeight, setTotalNetWeight] = useState(0);
   const [averageCarat, setAverageCarat] = useState(0);
 
-  // useEffect(() => {
-  //   calculateMonetaryValues();
-  // }, [items]);
-
   const calculateMonetaryValues = () => {
     let totalQuantityValue = 0;
     let totalGrossWeightValue = 0;
@@ -95,6 +91,10 @@ const PawnGeneratePage = () => {
     setLoanApprovalValue(totalMonetaryValue);
   };
 
+  useEffect(() => {
+    calculateMonetaryValues();
+  }, [items]);
+
   const addItem = () => {
     setItems([...items, { itemName: '', itemsQuantity: '', totalWeight: '', netWeight: '' }]);
   };
@@ -164,14 +164,13 @@ const PawnGeneratePage = () => {
             />
           </div>
           <div>
-            <label>Max Loan Value</label>
+            <label>Pawn Value</label>
             <input
               type="text"
               value={monetaryValues[index]?.monetaryValue.toLocaleString('en-LK', { style: 'currency', currency: 'LKR' }) || ''}
               readOnly
             />
           </div>
-          
           {items.length > 1 && (
             <button className="remove-item-btn" onClick={() => removeItem(index)}>
               <FaTrashAlt />
