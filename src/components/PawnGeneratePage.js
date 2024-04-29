@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaTrashAlt, FaPlus } from 'react-icons/fa'; // Import the trash and plus icons
 
 const PawnGeneratePage = () => {
