@@ -10,13 +10,7 @@ const PawnGeneratePage = () => {
   const [totalNetWeight, setTotalNetWeight] = useState(0);
   const [averageCarat, setAverageCarat] = useState(0);
 
-  // const calculateMonetaryValues = () => {
-  //   // Calculation logic here
-  // };
-
-  // useEffect(() => {
-  //   calculateMonetaryValues();
-  // }, [items]);
+  // Removed unused function and useEffect
 
   const addItem = () => {
     setItems([...items, { itemName: '', itemsQuantity: '', totalWeight: '', netWeight: '' }]);
