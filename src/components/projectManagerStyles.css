@@ -1,0 +1,25 @@
+.container {
+    margin: 20px;
+   margin-left: 500px;
+  }
+  
+  .input-field {
+    margin-bottom: 10px;
+    width: 200px;
+  }
+  
+  .carat-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .carat-table th, .carat-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .carat-table th {
+    background-color: #faf7f7;
+  }
+  
