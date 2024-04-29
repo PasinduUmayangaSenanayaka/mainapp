@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FaTrashAlt, FaPlus } from 'react-icons/fa'; // Import the trash and plus icons
-import './pawnGenerateStyles.css'; // Import the CSS file
+import { FaTrashAlt, FaPlus } from 'react-icons/fa';
+import './pawnGenerateStyles.css';
 
 const PawnGeneratePage = () => {
   const [items, setItems] = useState([{ itemName: '', itemsQuantity: '', totalWeight: '', netWeight: '' }]);
@@ -10,10 +10,6 @@ const PawnGeneratePage = () => {
   const [totalGrossWeight, setTotalGrossWeight] = useState(0);
   const [totalNetWeight, setTotalNetWeight] = useState(0);
   const [averageCarat, setAverageCarat] = useState(0);
-
-  useEffect(() => {
-    calculateMonetaryValues();
-  }, [items]);
 
   const calculateMonetaryValues = () => {
     let totalQuantityValue = 0;
@@ -95,6 +91,10 @@ const PawnGeneratePage = () => {
     setAverageCarat(totalNetWeightValue / totalGrossWeightValue);
     setLoanApprovalValue(totalMonetaryValue);
   };
+
+  useEffect(() => {
+    calculateMonetaryValues();
+  }, [items, calculateMonetaryValues]); // Include calculateMonetaryValues in the dependency array
 
   const addItem = () => {
     setItems([...items, { itemName: '', itemsQuantity: '', totalWeight: '', netWeight: '' }]);
