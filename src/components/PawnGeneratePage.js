@@ -11,9 +11,9 @@ const PawnGeneratePage = () => {
   const [totalNetWeight, setTotalNetWeight] = useState(0);
   const [averageCarat, setAverageCarat] = useState(0);
 
-  useEffect(() => {
-    calculateMonetaryValues();
-  }, [items]);
+  // useEffect(() => {
+  //   calculateMonetaryValues();
+  // }, [items]);
 
   const calculateMonetaryValues = () => {
     let totalQuantityValue = 0;
