@@ -1,5 +1,5 @@
 {
-  "name": "goldmain",
+  "name": "gold-loan-web-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +16,9 @@
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.17.0" // Add this line
   },
   "scripts": {
     "start": "react-scripts start",
