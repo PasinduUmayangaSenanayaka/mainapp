@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { FaTrashAlt, FaPlus } from 'react-icons/fa'; // Import the trash and plus icons
-import './pawnGenerateStyles.css'; // Import the CSS file
 
 const PawnGeneratePage = () => {
   const [items, setItems] = useState([{ itemName: '', itemsQuantity: '', totalWeight: '', netWeight: '' }]);
@@ -11,9 +10,9 @@ const PawnGeneratePage = () => {
   const [totalNetWeight, setTotalNetWeight] = useState(0);
   const [averageCarat, setAverageCarat] = useState(0);
 
-  // useEffect(() => {
-  //   calculateMonetaryValues();
-  // }, [items]);
+  useEffect(() => {
+    calculateMonetaryValues();
+  }, [items]);
 
   const calculateMonetaryValues = () => {
     let totalQuantityValue = 0;
@@ -113,85 +112,64 @@ const PawnGeneratePage = () => {
   };
 
   return (
-    <div className="container" style={{ backgroundColor: '#959191' }}>
+    <div className="container">
       {items.map((item, index) => (
         <div key={index} className="item-container">
-          <div >
-            <label className='it5'>Item Name</label>
-            <div className="input-field5">
+          <div>
+            <label>Item Name</label>
             <input
-              className="item-name-input"
               type="text"
               value={item.itemName}
               onChange={(e) => handleInputChange(index, e, 'itemName')}
             />
-            </div>
           </div>
-          <div >
-            <label className="it2">Qty</label>
-            <div className='input-field2'>
-            <input 
-              className="items-quantity-input"
+          <div>
+            <label>Item Quantity</label>
+            <input
               type="text"
               value={item.itemsQuantity}
               onChange={(e) => handleInputChange(index, e, 'itemsQuantity')}
             />
-            </div>
           </div>
-          <div >
-            <label className="it1">Gross Weight</label>
-            <div className='input-field1'>
+          <div>
+            <label>Gross Weight</label>
             <input
-              className="total-weight-input"
               type="text"
               value={item.totalWeight}
               onChange={(e) => handleInputChange(index, e, 'totalWeight')}
             />
-            </div>
           </div>
-          <div >
-            <label  className="it3">Net Weight</label>
-            <div  className='input-field3'>
+          <div>
+            <label>Net Weight</label>
             <input
-              className="net-weight-input"
               type="text"
               value={item.netWeight}
               onChange={(e) => handleInputChange(index, e, 'netWeight')}
             />
-            </div>
           </div>
-          <div >
-            <label className="it4">Pounds</label>
-            <div  className='input-field4'>
+          <div>
+            <label>Pounds</label>
             <input
-              className="pounds-amount-input"
               type="text"
               value={monetaryValues[index]?.poundAmount || ''}
               readOnly
             />
-            </div>
           </div>
-          <div >
-            <label className='it7'>Carat</label>
-            <div  className="input-field7">
+          <div>
+            <label>Carat</label>
             <input
-              className="carat-input"
               type="text"
               value={monetaryValues[index]?.carat || ''}
               readOnly
             />
-            </div>
           </div>
-          <div >
-            <label className='it8'>Max Loan Value</label>
-            <div className="input-field8">
+          <div>
+            <label>Max Loan Value</label>
             <input
-              className="pawn-value-input"
               type="text"
               value={monetaryValues[index]?.monetaryValue.toLocaleString('en-LK', { style: 'currency', currency: 'LKR' }) || ''}
               readOnly
             />
-            </div>
           </div>
           
           {items.length > 1 && (
