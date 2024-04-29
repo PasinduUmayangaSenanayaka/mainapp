@@ -91,9 +91,9 @@ const PawnGeneratePage = () => {
     setLoanApprovalValue(totalMonetaryValue);
   };
 
-  useEffect(() => {
-    calculateMonetaryValues();
-  }, [items]);
+  // useEffect(() => {
+  //   calculateMonetaryValues();
+  // }, [items]);
 
   const addItem = () => {
     setItems([...items, { itemName: '', itemsQuantity: '', totalWeight: '', netWeight: '' }]);
